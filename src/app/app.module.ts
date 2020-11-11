@@ -3,10 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ExpertsComponent } from './experts/experts.component';
+import { SecondheaderComponent } from './secondheader/secondheader.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    AccueilComponent,
+    ExpertsComponent,
+    SecondheaderComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
