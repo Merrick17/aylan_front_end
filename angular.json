@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/uikit/dist/css/uikit.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/uikit/dist/js/uikit.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,9 +95,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/uikit/dist/css/uikit.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/uikit/dist/js/uikit.js"
+            ]
           }
         },
         "lint": {
@@ -123,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "aylan"
+    }
+  },
+  "defaultProject": "aylan",
+  "cli": {
+    "analytics": "6bacc2f3-903b-46ea-aed6-c8d67b362866"
+  }
 }
