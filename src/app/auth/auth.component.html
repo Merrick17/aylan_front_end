@@ -4,7 +4,7 @@
 >
   <div class="uk-width-medium uk-padding-small">
     <!-- login -->
-    <form class="toggle-class" action="login-dark.html">
+    <form class="toggle-class" [formGroup]="authForm" (ngSubmit)="authUser()">
       <fieldset class="uk-fieldset">
         <div class="uk-margin-small">
           <div class="uk-inline uk-width-1-1">
@@ -17,8 +17,11 @@
               required
               placeholder="Username"
               type="text"
+              formControlName="email"
             />
+           
           </div>
+          <span class="uk-text-center uk-text-justify uk-text-danger" *ngIf=" submitted && authForm.controls.email.errors.required  ">Invalid Email</span>
         </div>
         <div class="uk-margin-small">
           <div class="uk-inline uk-width-1-1">
@@ -31,15 +34,19 @@
               required
               placeholder="Password"
               type="password"
+              formControlName="password"
             />
+            
           </div>
+          <span class="uk-text-center uk-text-justify uk-text-danger" *ngIf="submitted && authForm.controls.password.errors">Invalid Password</span>
         </div>
         <div class="uk-margin-small">
-          <label
+          <!-- <label
             ><input class="uk-checkbox" type="checkbox" /> Keep me logged
             in</label
-          >
+          > -->
         </div>
+       
         <div class="uk-margin-bottom">
           <button
             type="submit"

@@ -12,7 +12,8 @@ import { ServicesComponent } from './services/services.component';
 import { AdminComponent } from './admin/admin.component';
 import { AylanComponent } from './aylan/aylan.component';
 import { AuthComponent } from './auth/auth.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,13 +24,16 @@ import { AuthComponent } from './auth/auth.component';
     SecondheaderComponent,
     ServicesComponent,
     AylanComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
