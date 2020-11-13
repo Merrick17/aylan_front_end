@@ -32,7 +32,8 @@
               "./node_modules/uikit/dist/css/uikit.css"
             ],
             "scripts": [
-              "./node_modules/uikit/dist/js/uikit.js"
+              "./node_modules/uikit/dist/js/uikit.js",
+              "./node_modules/uikit/dist/js/uikit-icons.js"
             ]
           },
           "configurations": {
@@ -99,7 +100,8 @@
               "./node_modules/uikit/dist/css/uikit.css"
             ],
             "scripts": [
-              "./node_modules/uikit/dist/js/uikit.js"
+              "./node_modules/uikit/dist/js/uikit.js",
+              "./node_modules/uikit/dist/js/uikit-icons.js"
             ]
           }
         },

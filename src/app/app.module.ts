@@ -9,6 +9,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ExpertsComponent } from './experts/experts.component';
 import { SecondheaderComponent } from './secondheader/secondheader.component';
 import { ServicesComponent } from './services/services.component';
+import { AdminComponent } from './admin/admin.component';
+import { AylanComponent } from './aylan/aylan.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { ServicesComponent } from './services/services.component';
     AccueilComponent,
     ExpertsComponent,
     SecondheaderComponent,
-    ServicesComponent
+    ServicesComponent,
+    AylanComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
