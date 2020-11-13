@@ -40,7 +40,7 @@ BASE_URL=environment.BASE_URL;
   registerUser(fullName, email, phoneNumber, address, isAdmin, password)
 {
 
-  return this.http.post(this.BASE_URL +'/auth/register', {
+  return this.http.post(this.BASE_URL +'/user/register', {
     'fullName':fullName,
     'email': email,
     'password': password,
