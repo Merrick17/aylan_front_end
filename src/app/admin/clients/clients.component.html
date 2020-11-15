@@ -2,195 +2,84 @@
   class="uk-grid  uk-align-right"
   data-uk-grid
 >
-  <div class="uk-visible@xl ">
-    <button class="uk-button uk-button-primary">Add A Client</button>
+  <div class=" ">
+    <button class="uk-button uk-button-primary" uk-toggle="target: #add_client">Add A Client</button>
   </div>
 </div>
 <table class="uk-table uk-table-middle uk-table-divider">
   <thead>
     <tr class="uk-background-primary">
       <th class="uk-width-small" class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Ref</span>
+        <span style="color: #fff" class="uk-text-bold">N°</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Title</span>
+        <span style="color: #fff" class="uk-text-bold">Name</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Description</span>
+        <span style="color: #fff" class="uk-text-bold">Image</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Requirements</span>
+        <span style="color: #fff" class="uk-text-bold">Action</span>
       </th>
-      <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Minimeum Salary</span>
-      </th>
-      <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Actions</span>
-      </th>
+     
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Table Data</td>
+    <tr *ngFor="let client of clients;let i = index">
+      <td>{{i}}</td>
       <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+      {{client.name}}
       </td>
       <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+      <img src="http://localhost:3000/{{client.clientLogo}}" width="300px" height="150"/>
       </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
+     
+     
       <td>
         <button class="uk-button uk-button-primary uk-margin" type="button">
           <span uk-icon="file-edit"></span> Edit
         </button>
-        <button class="uk-button uk-button-danger" type="button">
+      <br/>
+        <button class="uk-button uk-button-danger" type="button" (click)="deleteClient(client._id)">
           <span uk-icon="trash"></span> Delete
         </button>
       </td>
     </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
+   
   </tbody>
 </table>
+<div id="add_client" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">Add A New Client</h2>
+      <form>
+        <fieldset class="uk-fieldset">
+    
+            <legend class="uk-legend">Name</legend>
+    
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="clientName"  [ngModelOptions]="{standalone: true}">
+            </div>
+            <legend class="uk-legend">Client Logo </legend>
+            <div class="uk-margin">
+            
+              <div uk-form-custom>
+                  <input type="file">
+                  <span class="uk-link">upload</span>
+              </div>
+          </div>
+      
+          <div class="uk-margin" uk-margin>
+              <div uk-form-custom="target: true">
+                  <input type="file"  (change)="onChange($event)">
+                  <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+              </div>
+          
+          </div>
+        </fieldset>
+      </form>    
+      <p class="uk-text-right">
+          <button class="uk-button uk-button-default uk-modal-close uk-modal-close" type="button" >Cancel</button>
+          <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="SubmitClient()">Save</button>
+      </p>
+  </div>
+</div>

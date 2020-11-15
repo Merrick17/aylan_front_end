@@ -12,6 +12,7 @@ import { ExpertsComponent } from './experts/experts.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ResumeComponent } from './resume/resume.component';
 import { NewsComponent } from './news/news.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms'; 
 const routes: Routes = [
   {
     path: '',
@@ -59,8 +60,15 @@ const routes: Routes = [
     MessagesComponent,
     ResumeComponent,
     NewsComponent,
+    ClientsComponent
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes),
+   
+  ],
   providers: [],
 })
 export class AdminModule {}

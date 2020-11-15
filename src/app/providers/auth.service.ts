@@ -12,4 +12,14 @@ export class AuthService {
   setIsAdmin(value: boolean) {
     this.isAdmin = value;
   }
+  isAuth()
+  {
+    if(localStorage.getItem('token'))
+    {
+      return true
+    }else 
+    {
+      false 
+    }
+  }
 }

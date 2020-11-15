@@ -1,3 +1,11 @@
+<div
+  class="uk-grid  uk-align-right"
+  data-uk-grid
+>
+  <div class=" ">
+    <button class="uk-button uk-button-primary" uk-toggle="target: #add_client">Add An Offer</button>
+  </div>
+</div>
 <table class="uk-table uk-table-middle uk-table-divider">
   <thead>
     <tr class="uk-background-primary">
@@ -22,167 +30,70 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Table Data</td>
+    <tr *ngFor="let off of offers ; let i = index">
+      <td>{{off.ref}}</td>
       <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+      {{off.title}}
       </td>
       <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        {{off.description}}
       </td>
       <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        {{off.requirement[0]}}
       </td>
       <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+       {{off.minSalary}}
       </td>
       <td>
         <button class="uk-button uk-button-primary uk-margin" type="button">
           <span uk-icon="file-edit"></span> Edit
         </button>
+        <br/>
         <button class="uk-button uk-button-danger" type="button">
           <span uk-icon="trash"></span> Delete
         </button>
       </td>
     </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td class="uk-width-small">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span> Edit
-        </button>
-        <button class="uk-button uk-button-danger" type="button">
-          <span uk-icon="trash"></span> Delete
-        </button>
-      </td>
-    </tr>
+
   </tbody>
 </table>
+<div id="add_client" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">Add A New Offer</h2>
+      <form>
+        <fieldset class="uk-fieldset">
+    
+            <legend class="uk-legend">Ref</legend>
+    
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="ref"  [ngModelOptions]="{standalone: true}">
+            </div>
+          
+            <legend class="uk-legend">Title</legend>
+    
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="title"  [ngModelOptions]="{standalone: true}">
+            </div>
+            <legend class="uk-legend">Description</legend>
+    
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="desc"  [ngModelOptions]="{standalone: true}">
+            </div>
+            <legend class="uk-legend">Requirements</legend>
+    
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="rec"  [ngModelOptions]="{standalone: true}">
+            </div>
+            <legend class="uk-legend">Salary Proposed</legend>
+    
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="salary"  [ngModelOptions]="{standalone: true}">
+            </div>
+        </fieldset>
+      </form>    
+      <p class="uk-text-right">
+          <button class="uk-button uk-button-default uk-modal-close uk-modal-close" type="button" >Cancel</button>
+          <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="submitOffer()" >Save</button>
+      </p>
+  </div>
+</div>
