@@ -29,7 +29,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "./node_modules/uikit/dist/css/uikit.css"
+              "./node_modules/uikit/dist/css/uikit.css",
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "./node_modules/uikit/dist/js/uikit.js",
@@ -97,7 +98,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "./node_modules/uikit/dist/css/uikit.css"
+              "./node_modules/uikit/dist/css/uikit.css",
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "./node_modules/uikit/dist/js/uikit.js",

@@ -14,6 +14,9 @@ import { AylanComponent } from './aylan/aylan.component';
 import { AuthComponent } from './auth/auth.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     ServicesComponent,
     AylanComponent,
     AuthComponent,
+    // T
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
