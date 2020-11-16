@@ -7,16 +7,16 @@ import {HttpClient} from '@angular/common/http';
 export class TestomanialService {
 BASE_URL=environment.BASE_URL;
   constructor(private http: HttpClient) { }
-  
+
   getAllTestomanials() {
     return this.http.get(this.BASE_URL + '/testomanial/')
   }
   createTestomanial(data) {
 
   const token = localStorage.getItem('token')
-    return this.http.post(this.BASE_URL + '/testomanial/create', {
+    return this.http.post(this.BASE_URL + '/testomanial/create',
       data
-    }, {headers:{
+    , {headers:{
     'access_token':token
   }}
 )

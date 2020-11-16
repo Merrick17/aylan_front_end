@@ -21,7 +21,7 @@
       <th class="uk-background-primary">
         <span style="color: #fff" class="uk-text-bold">Action</span>
       </th>
-     
+
     </tr>
   </thead>
   <tbody>
@@ -33,19 +33,19 @@
       <td>
       <img src="http://localhost:3000/{{client.clientLogo}}" width="300px" height="150"/>
       </td>
-     
-     
+
+
       <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
+        <button class="uk-button uk-button-primary uk-width-1-1 uk-margin"  type="button">
           <span uk-icon="file-edit"></span> Edit
         </button>
       <br/>
-        <button class="uk-button uk-button-danger" type="button" (click)="deleteClient(client._id)">
+        <button class="uk-button  uk-width-1-1 uk-button-danger" type="button" (click)="deleteClient(client._id)">
           <span uk-icon="trash"></span> Delete
         </button>
       </td>
     </tr>
-   
+
   </tbody>
 </table>
 <div id="add_client" uk-modal>
@@ -53,30 +53,30 @@
       <h2 class="uk-modal-title">Add A New Client</h2>
       <form>
         <fieldset class="uk-fieldset">
-    
+
             <legend class="uk-legend">Name</legend>
-    
+
             <div class="uk-margin">
                 <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="clientName"  [ngModelOptions]="{standalone: true}">
             </div>
             <legend class="uk-legend">Client Logo </legend>
             <div class="uk-margin">
-            
+
               <div uk-form-custom>
                   <input type="file">
                   <span class="uk-link">upload</span>
               </div>
           </div>
-      
+
           <div class="uk-margin" uk-margin>
               <div uk-form-custom="target: true">
                   <input type="file"  (change)="onChange($event)">
                   <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
               </div>
-          
+
           </div>
         </fieldset>
-      </form>    
+      </form>
       <p class="uk-text-right">
           <button class="uk-button uk-button-default uk-modal-close uk-modal-close" type="button" >Cancel</button>
           <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="SubmitClient()">Save</button>

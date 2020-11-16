@@ -1,18 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AdminComponent } from './admin.component';
-import { Routes, RouterModule, Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { AdminheaderComponent } from './adminheader/adminheader.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { OffersComponent } from './offers/offers.component';
-import { TestamonialsComponent } from './testamonials/testamonials.component';
-import { ClientsComponent } from './clients/clients.component';
-import { ExpertsComponent } from './experts/experts.component';
-import { MessagesComponent } from './messages/messages.component';
-import { ResumeComponent } from './resume/resume.component';
-import { NewsComponent } from './news/news.component';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms'; 
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { AdminComponent } from './admin.component'
+import { Routes, RouterModule, Router } from '@angular/router'
+import { CommonModule } from '@angular/common'
+import { AdminheaderComponent } from './adminheader/adminheader.component'
+import { SidebarComponent } from './sidebar/sidebar.component'
+import { OffersComponent } from './offers/offers.component'
+import { TestamonialsComponent } from './testamonials/testamonials.component'
+import { ClientsComponent } from './clients/clients.component'
+import { ExpertsComponent } from './experts/experts.component'
+import { MessagesComponent } from './messages/messages.component'
+import { ResumeComponent } from './resume/resume.component'
+import { NewsComponent } from './news/news.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { TestomanialComponent } from './testomanial/testomanial.component'
 const routes: Routes = [
   {
     path: '',
@@ -46,9 +47,13 @@ const routes: Routes = [
         path: 'news',
         component: NewsComponent,
       },
+      {
+        path: 'testomanial',
+        component: TestomanialComponent,
+      },
     ],
   },
-];
+]
 @NgModule({
   declarations: [
     AdminComponent,
@@ -60,14 +65,14 @@ const routes: Routes = [
     MessagesComponent,
     ResumeComponent,
     NewsComponent,
-    ClientsComponent
+    ClientsComponent,
+    TestomanialComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-   
   ],
   providers: [],
 })

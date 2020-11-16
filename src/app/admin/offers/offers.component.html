@@ -45,11 +45,11 @@
        {{off.minSalary}}
       </td>
       <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
+        <button class="uk-button uk-button-primary uk-margin uk-width-1-1" type="button">
           <span uk-icon="file-edit"></span> Edit
         </button>
         <br/>
-        <button class="uk-button uk-button-danger" type="button">
+        <button class="uk-button uk-button-danger uk-width-1-1" type="button">
           <span uk-icon="trash"></span> Delete
         </button>
       </td>
@@ -62,35 +62,35 @@
       <h2 class="uk-modal-title">Add A New Offer</h2>
       <form>
         <fieldset class="uk-fieldset">
-    
+
             <legend class="uk-legend">Ref</legend>
-    
+
             <div class="uk-margin">
                 <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="ref"  [ngModelOptions]="{standalone: true}">
             </div>
-          
+
             <legend class="uk-legend">Title</legend>
-    
+
             <div class="uk-margin">
                 <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="title"  [ngModelOptions]="{standalone: true}">
             </div>
             <legend class="uk-legend">Description</legend>
-    
+
             <div class="uk-margin">
                 <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="desc"  [ngModelOptions]="{standalone: true}">
             </div>
             <legend class="uk-legend">Requirements</legend>
-    
+
             <div class="uk-margin">
                 <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="rec"  [ngModelOptions]="{standalone: true}">
             </div>
             <legend class="uk-legend">Salary Proposed</legend>
-    
+
             <div class="uk-margin">
                 <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="salary"  [ngModelOptions]="{standalone: true}">
             </div>
         </fieldset>
-      </form>    
+      </form>
       <p class="uk-text-right">
           <button class="uk-button uk-button-default uk-modal-close uk-modal-close" type="button" >Cancel</button>
           <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="submitOffer()" >Save</button>
