@@ -6,13 +6,13 @@ import { TestomanialService } from '../../testamoniel.service'
   styleUrls: ['./testomanial.component.scss'],
 })
 export class TestomanialComponent implements OnInit {
-   testo = []
+  testo = []
   name = ''
   description = ''
   constructor(private testomanial: TestomanialService) {}
 
   ngOnInit(): void {
-    this.getAllTestos();
+    this.getAllTestos()
   }
 
   getAllTestos() {
@@ -33,11 +33,13 @@ export class TestomanialComponent implements OnInit {
         console.log(data)
       })
   }
-  deleteTesto(id)
-  {
-
-    this.testomanial.deleteTestomanial(id).subscribe(data=>{
-      let result:any ;
+  deleteTesto(id) {
+    this.testomanial.deleteTestomanial(id).subscribe((data) => {
+      let result: any
     })
+  }
+  clear() {
+    this.name = ''
+    this.description = ''
   }
 }

@@ -1,99 +1,135 @@
-<div
-  class="uk-grid  uk-align-right"
-  data-uk-grid
->
+<div class="uk-grid uk-align-right" data-uk-grid>
   <div class=" ">
-    <button class="uk-button uk-button-primary" uk-toggle="target: #add_client">Add An Offer</button>
+    <button class="uk-button uk-button-primary" uk-toggle="target: #add_client">
+      Add An Offer
+    </button>
   </div>
 </div>
 <table class="uk-table uk-table-middle uk-table-divider">
   <thead>
     <tr class="uk-background-primary">
       <th class="uk-width-small" class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Ref</span>
+        <span style="color: #fff;" class="uk-text-bold">Ref</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Title</span>
+        <span style="color: #fff;" class="uk-text-bold">Title</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Description</span>
+        <span style="color: #fff;" class="uk-text-bold">Description</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Requirements</span>
+        <span style="color: #fff;" class="uk-text-bold">Requirements</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Minimeum Salary</span>
+        <span style="color: #fff;" class="uk-text-bold">Minimeum Salary</span>
       </th>
       <th class="uk-background-primary">
-        <span style="color: #fff" class="uk-text-bold">Actions</span>
+        <span style="color: #fff;" class="uk-text-bold">Actions</span>
       </th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let off of offers ; let i = index">
-      <td>{{off.ref}}</td>
+    <tr *ngFor="let off of offers; let i = index">
+      <td>{{ off.ref }}</td>
       <td>
-      {{off.title}}
+        {{ off.title }}
       </td>
       <td>
-        {{off.description}}
+        {{ off.description }}
       </td>
       <td>
-        {{off.requirement[0]}}
+        {{ off.requirement[0] }}
       </td>
       <td class="uk-width-small">
-       {{off.minSalary}}
+        {{ off.minSalary }}
       </td>
       <td>
-        <button class="uk-button uk-button-primary uk-margin uk-width-1-1" type="button">
-          <span uk-icon="file-edit"></span> Edit
+        <button
+          class="uk-button uk-button-primary uk-margin uk-width-1-1"
+          type="button"
+        >
+          <span uk-icon="file-edit"></span>
+          Edit
         </button>
-        <br/>
+        <br />
         <button class="uk-button uk-button-danger uk-width-1-1" type="button">
-          <span uk-icon="trash"></span> Delete
+          <span uk-icon="trash"></span>
+          Delete
         </button>
       </td>
     </tr>
-
   </tbody>
 </table>
 <div id="add_client" uk-modal>
   <div class="uk-modal-dialog uk-modal-body">
-      <h2 class="uk-modal-title">Add A New Offer</h2>
-      <form>
-        <fieldset class="uk-fieldset">
+    <h2 class="uk-modal-title">Add A New Offer</h2>
+    <form>
+      <fieldset class="uk-fieldset">
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Reference"
+            [(ngModel)]="ref"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
 
-            <legend class="uk-legend">Ref</legend>
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Title"
+            [(ngModel)]="title"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
 
-            <div class="uk-margin">
-                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="ref"  [ngModelOptions]="{standalone: true}">
-            </div>
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Description"
+            [(ngModel)]="desc"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
 
-            <legend class="uk-legend">Title</legend>
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Requirements"
+            [(ngModel)]="rec"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
 
-            <div class="uk-margin">
-                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="title"  [ngModelOptions]="{standalone: true}">
-            </div>
-            <legend class="uk-legend">Description</legend>
-
-            <div class="uk-margin">
-                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="desc"  [ngModelOptions]="{standalone: true}">
-            </div>
-            <legend class="uk-legend">Requirements</legend>
-
-            <div class="uk-margin">
-                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="rec"  [ngModelOptions]="{standalone: true}">
-            </div>
-            <legend class="uk-legend">Salary Proposed</legend>
-
-            <div class="uk-margin">
-                <input class="uk-input" type="text" placeholder="Input"   [(ngModel)]="salary"  [ngModelOptions]="{standalone: true}">
-            </div>
-        </fieldset>
-      </form>
-      <p class="uk-text-right">
-          <button class="uk-button uk-button-default uk-modal-close uk-modal-close" type="button" >Cancel</button>
-          <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="submitOffer()" >Save</button>
-      </p>
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Minimeum Salary"
+            [(ngModel)]="salary"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+      </fieldset>
+    </form>
+    <p class="uk-text-right">
+      <button
+        class="uk-button uk-button-default uk-modal-close uk-modal-close"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="uk-button uk-button-primary uk-modal-close"
+        type="button"
+        (click)="submitOffer()"
+      >
+        Save
+      </button>
+    </p>
   </div>
 </div>
