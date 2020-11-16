@@ -35,7 +35,7 @@ export class ExpertsComponent implements OnInit {
       this.toastr.success(result.msg, 'Success')
       this.getAllExperts()
       console.log(data)
-      this.clear();
+      this.clear()
     })
   }
   getAllExperts() {

@@ -64,7 +64,7 @@
 
               <div uk-form-custom>
                   <input type="file">
-                  <span class="uk-link">upload</span>
+                  <!-- <span class="uk-link">upload</span> -->
               </div>
           </div>
 
@@ -78,7 +78,7 @@
         </fieldset>
       </form>
       <p class="uk-text-right">
-          <button class="uk-button uk-button-default uk-modal-close uk-modal-close" type="button" >Cancel</button>
+          <button class="uk-button uk-button-default uk-modal-close uk-modal-close" type="button"  (click)="clear()">Cancel</button>
           <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="SubmitClient()">Save</button>
       </p>
   </div>

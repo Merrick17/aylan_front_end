@@ -30,15 +30,6 @@
       />
       <!-- /TOP IMAGE -->
     </div>
-    <div
-      class="uk-position-bottom-center uk-position-medium uk-position-z-index uk-text-center"
-    >
-      <a
-        href="#content"
-        data-uk-scroll="duration: 500"
-        data-uk-icon="icon: arrow-down; ratio: 2"
-      ></a>
-    </div>
   </div>
 </div>
 
@@ -48,7 +39,7 @@
 
   <div class="uk-container">
     <h4 class="uk-heading-line uk-text-bold">
-      <span>Latest Opportunity </span>
+      <span>Latest Opportunity</span>
     </h4>
     <div data-uk-slider="velocity: 5">
       <div class="uk-position-relative">
@@ -71,17 +62,23 @@
                     <h3
                       class="uk-card-title uk-margin-small-top uk-margin-remove-bottom"
                     >
-                      <a class="uk-link-reset" href="#">{{itm.title}}</a>
+                      <a class="uk-link-reset" href="#">{{ itm.title }}</a>
                     </h3>
-                    <span class="uk-article-meta"
-                      >Created At : {{itm.createdAt | date: 'yyyy-MM-dd'}}</span
-                    >
+                    <span class="uk-article-meta">
+                      Created At : {{ itm.createdAt | date: 'yyyy-MM-dd' }}
+                    </span>
                     <p class="uk-margin-small">
-                     {{itm.description}}
+                      {{ itm.description }}
                     </p>
                     <ul>
-                      <li><strong>Reference</strong>: {{itm.ref}}</li>
-                      <li><strong>Salary Offered</strong>: {{itm.minSalary}}</li>
+                      <li>
+                        <strong>Reference</strong>
+                        : {{ itm.ref }}
+                      </li>
+                      <li>
+                        <strong>Salary Offered</strong>
+                        : {{ itm.minSalary }}
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -132,32 +129,37 @@
       <fieldset class="uk-fieldset">
         <!-- <legend class="uk-legend">Legend</legend> -->
         <div class="uk-margin">
-          <select class="uk-select">
-            <option  *ngFor="let off of selectOp" value="{{off._id}}">{{off.ref}}</option>
-          
+          <select class="uk-select" [(ngModel)]="selectedOffer" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let off of selectOp" value="{{ off._id }}">
+              {{ off.ref }}
+            </option>
           </select>
         </div>
         <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Name" />
+          <input class="uk-input" type="text" placeholder="Name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"/>
         </div>
         <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="First Name" />
+          <input class="uk-input" type="text" placeholder="First Name" [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}"/>
         </div>
         <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Email" />
+          <input class="uk-input" type="text" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" />
         </div>
         <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Phone" />
+          <input class="uk-input" type="text" placeholder="Phone" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}"/>
         </div>
         <div class="js-upload" uk-form-custom>
-          <input type="file" >
-          <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
-      </div>
-
-        
+          <input type="file" (change)="onChange($event)" />
+          <button
+            class="uk-button uk-button-default"
+            type="button"
+            tabindex="-1"
+          >
+            Select
+          </button>
+        </div>
       </fieldset>
       <div class="uk-margin uk-align-center">
-        <button class="uk-button uk-button-primary">Submit</button>
+        <button class="uk-button uk-button-primary" (click)="SubmitResume()">Submit</button>
       </div>
     </form>
   </div>

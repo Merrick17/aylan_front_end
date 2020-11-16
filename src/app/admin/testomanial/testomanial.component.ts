@@ -19,6 +19,7 @@ export class TestomanialComponent implements OnInit {
     this.testomanial.getAllTestomanials().subscribe((data) => {
       let result: any = data
       this.testo = result.result
+      this.getAllTestos();
     })
   }
 

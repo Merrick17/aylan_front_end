@@ -14,6 +14,7 @@ import { ResumeComponent } from './resume/resume.component'
 import { NewsComponent } from './news/news.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { TestomanialComponent } from './testomanial/testomanial.component'
+import { PdfViewerModule } from 'ng2-pdf-viewer'
 const routes: Routes = [
   {
     path: '',
@@ -73,6 +74,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
+
   ],
   providers: [],
 })

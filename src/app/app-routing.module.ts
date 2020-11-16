@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
-import { AuthComponent } from './auth/auth.component';
-import { AylanComponent } from './aylan/aylan.component';
-import { ExpertsComponent } from './experts/experts.component';
-import { ServicesComponent } from './services/services.component';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { AccueilComponent } from './accueil/accueil.component'
+import { AuthComponent } from './auth/auth.component'
+import { AylanComponent } from './aylan/aylan.component'
+import { ContactComponent } from './contact/contact.component'
+import { ExpertsComponent } from './experts/experts.component'
+import { NewsComponent } from './news/news.component'
+import { ServicesComponent } from './services/services.component'
 
 const routes: Routes = [
   {
@@ -28,11 +30,20 @@ const routes: Routes = [
     component: AylanComponent,
   },
   {
+    path: 'contact',
+    component: ContactComponent,
+  },
+  {
+    path: 'news',
+    component: NewsComponent,
+  },
+
+  {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

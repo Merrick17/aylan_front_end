@@ -72,10 +72,7 @@
           <div data-uk-scrollspy-class="uk-animation-slide-right-medium">
             <h6 class="uk-text-primary">OUR VALUE</h6>
             <h2 class="uk-margin-small-top">SERVING TO GLOW</h2>
-            <p class="subtitle-text">
-
-            </p>
-
+            <p class="subtitle-text"></p>
           </div>
         </div>
       </li>
@@ -118,10 +115,7 @@
               performances. Ensuring a high level of service and satisfaction
               thanks to our methods and our know-how
             </h2>
-            <p class="subtitle-text">
-
-            </p>
-
+            <p class="subtitle-text"></p>
           </div>
         </div>
       </li>
@@ -191,36 +185,13 @@
           data-uk-slider="easing: cubic-bezier(.16,.75,.47,1)"
         >
           <ul class="uk-slider-items uk-child-width-1-1">
-            <li>
+            <li *ngFor="let test of testomanials">
               <div data-uk-slider-parallax="opacity: 0.2,1,0.2">
                 <h2 class="uk-margin-small-top">
-                  "Duis aute irure dolor in reprehenderit in voluptate velit
-                  esse cillum dolore eu fugiat nulla pariatur"
+                  {{ test.description }}
                 </h2>
                 <p class="uk-text-meta">
-                  Lorena Smith, founder of Some Cool Startup
-                </p>
-              </div>
-            </li>
-            <li>
-              <div data-uk-slider-parallax="opacity: 0.2,1,0.2">
-                <h2 class="uk-margin-small-top">
-                  "Aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur"
-                </h2>
-                <p class="uk-text-meta">
-                  Lorena Smith, founder of Some Cool Startup
-                </p>
-              </div>
-            </li>
-            <li>
-              <div data-uk-slider-parallax="opacity: 0.2,1,0.2">
-                <h2 class="uk-margin-small-top">
-                  "Irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur"
-                </h2>
-                <p class="uk-text-meta">
-                  Lorena Smith, founder of Some Cool Startup
+                  {{ test.name }}
                 </p>
               </div>
             </li>
@@ -250,17 +221,24 @@
       data-uk-scrollspy="target: > div; delay: 150; cls: uk-animation-slide-bottom-medium"
     >
       <div class="uk-text-center" *ngFor="let exp of experts">
-        <img src="../../assets/img/expert.jpg" data-uk-img alt="Image" />
+        <img
+          src="http://localhost:3000/{{ exp.image }}"
+          data-uk-img
+          alt="Image"
+        />
         <h4
           class="uk-margin-small-bottom uk-margin-top uk-margin-remove-adjacent"
         >
-          Lorem ipsum dolor sit amet
+          {{ exp.name }}
         </h4>
         <p>
-          24/7 support. We’re always here for you no matter what time of day.
+          {{ exp.description }}
         </p>
-      </div>
 
+        <ul>
+          <li>{{ exp.email }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

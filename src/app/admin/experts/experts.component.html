@@ -1,130 +1,97 @@
-<div class="uk-grid uk-align-right" data-uk-grid>
+<div
+  class="uk-grid  uk-align-right"
+  data-uk-grid
+>
   <div class=" ">
-    <button class="uk-button uk-button-primary" uk-toggle="target: #add_client">
-      Add An Expert
-    </button>
+    <button class="uk-button uk-button-primary" uk-toggle="target: #add_client">Add An Expert</button>
   </div>
 </div>
 <table class="uk-table uk-table-middle uk-table-divider">
-  <thead>
-    <tr class="uk-background-primary">
-      <th class="uk-width-small" class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">N°</span>
-      </th>
-      <th class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">Name</span>
-      </th>
-      <th class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">Description</span>
-      </th>
-      <th class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">Image</span>
-      </th>
+    <thead>
+      <tr class="uk-background-primary">
+        <th class="uk-width-small" class="uk-background-primary">
+          <span style="color: #fff" class="uk-text-bold">N°</span>
+        </th>
+        <th class="uk-background-primary">
+          <span style="color: #fff" class="uk-text-bold">Name</span>
+        </th>
+        <th class="uk-background-primary">
+          <span style="color: #fff" class="uk-text-bold">Description</span>
+        </th>
+        <th class="uk-background-primary">
+          <span style="color: #fff" class="uk-text-bold">Image</span>
+        </th>
 
-      <th class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">Actions</span>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let exp of experts; let i = index">
-      <td>{{ i }}</td>
-      <td>
-        {{ exp.name }}
-      </td>
-      <td>
-        {{ exp.description }}
-      </td>
+        <th class="uk-background-primary">
+          <span style="color: #fff" class="uk-text-bold">Actions</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exp of experts; let i = index">
+        <td>{{i}}</td>
+        <td>
+         {{exp.name}}
+        </td>
+        <td>
+        {{exp.description}}
+        </td>
 
-      <td class="uk-width-small">
-        <img
-          src="http://localhost:3000/{{ exp.image }}"
-          width="200px"
-          height="100px"
-        />
-      </td>
-      <td>
-        <button class="uk-button uk-button-primary uk-margin" type="button">
-          <span uk-icon="file-edit"></span>
-          Edit
-        </button>
-        <br />
-        <button
-          class="uk-button uk-button-danger"
-          type="button"
-          (click)="deleteExpert(exp._id)"
-        >
-          <span uk-icon="trash"></span>
-          Delete
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <td class="uk-width-small">
+         <img src="http://localhost:3000/{{exp.image}}" width="200px" height="100px"/>
+        </td>
+        <td>
+          <button class="uk-button uk-button-primary uk-margin uk-width-1-1" type="button">
+            <span uk-icon="file-edit"></span> Edit
+          </button>
+          <br/>
+          <button class="uk-button uk-button-danger uk-width-1-1" type="button" (click)="deleteExpert(exp._id)">
+            <span uk-icon="trash"></span> Delete
+          </button>
+        </td>
+      </tr>
 
-<div id="add_client" uk-modal>
-  <div class="uk-modal-dialog uk-modal-body">
-    <h2 class="uk-modal-title">Add An Expert</h2>
-    <form>
-      <fieldset class="uk-fieldset">
-        <div class="uk-margin">
-          <input
-            class="uk-input"
-            type="text"
-            placeholder="Name"
-            [(ngModel)]="name"
-            [ngModelOptions]="{ standalone: true }"
-          />
-        </div>
+    </tbody>
+  </table>
 
-        <div class="uk-margin">
-          <input
-            class="uk-input"
-            type="text"
-            placeholder="Description"
-            [(ngModel)]="description"
-            [ngModelOptions]="{ standalone: true }"
-          />
-        </div>
+  <div id="add_client" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Add An Expert</h2>
+        <form>
+          <fieldset class="uk-fieldset">
 
-        <div class="uk-margin">
-          <input
-            class="uk-input"
-            type="text"
-            placeholder="Email"
-            [(ngModel)]="email"
-            [ngModelOptions]="{ standalone: true }"
-          />
-        </div>
 
-        <div class="uk-margin" uk-margin>
-          <div uk-form-custom="target: true">
-            <input type="file" (change)="onChange($event)" />
-            <input
-              class="uk-input uk-form-width-medium"
-              type="text"
-              placeholder="Select file"
-              disabled
-            />
-          </div>
-        </div>
-      </fieldset>
-    </form>
-    <p class="uk-text-right">
-      <button
-        class="uk-button uk-button-default uk-width-1-1 uk-modal-close uk-modal-close"
-        type="button"
-        (click)="clear()"
-      >
-        Cancel
-      </button>
-      <button
-        class="uk-button uk-button-primary uk-width-1-1 uk-modal-close"
-        type="button"
-        (click)="addExpert()"
-      >
-        Save
-      </button>
-    </p>
+
+              <div class="uk-margin">
+                  <input class="uk-input" type="text" placeholder="Name"  [(ngModel)]="name"   [ngModelOptions]="{standalone: true}">
+              </div>
+
+
+
+
+              <div class="uk-margin">
+                  <input class="uk-input" type="text" placeholder="Description"  [(ngModel)]="description"   [ngModelOptions]="{standalone: true}">
+              </div>
+
+
+
+              <div class="uk-margin">
+                  <input class="uk-input" type="text" placeholder="Email"   [(ngModel)]="email"   [ngModelOptions]="{standalone: true}">
+              </div>
+
+
+              <div class="uk-margin" uk-margin>
+                <div uk-form-custom="target: true">
+                    <input type="file"  (change)="onChange($event)">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                </div>
+
+            </div>
+          </fieldset>
+        </form>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default   uk-modal-close uk-modal-close" type="button"  (click)="clear()">Cancel</button>
+            <button class="uk-button uk-button-primary  uk-modal-close" type="button" (click)="addExpert()" >Save</button>
+        </p>
+    </div>
   </div>
-</div>

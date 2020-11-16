@@ -30,7 +30,6 @@
       />
       <!-- /TOP IMAGE -->
     </div>
-
   </div>
 </div>
 <section id="content" class="uk-section uk-section-default">
@@ -40,33 +39,67 @@
         class="uk-subnav uk-subnav-pill uk-flex uk-flex-center"
         data-uk-switcher="connect: .uk-switcher; animation: uk-animation-fade"
       >
-        <li *ngFor="let itm of items "><a class="uk-border-pill" href="#">{{itm.name}}</a></li>
-
+        <li *ngFor="let itm of items">
+          <a class="uk-border-pill" href="#">{{ itm.name }}</a>
+        </li>
       </ul>
     </div>
 
     <ul class="uk-switcher uk-margin">
-      <li *ngFor="let itm of items ">
+      <li *ngFor="let itm of items">
         <div
           class="uk-grid uk-child-width-1-2@l uk-flex-middle"
           data-uk-grid
           data-uk-scrollspy="target: > div; cls: uk-animation-slide-left-medium"
         >
           <div>
-            <img src="http://localhost:3000/{{itm.clientLogo}}" alt="" data-uk-img />
+            <img
+              src="http://localhost:3000/{{ itm.clientLogo }}"
+              alt=""
+              data-uk-img
+            />
           </div>
           <div data-uk-scrollspy-class="uk-animation-slide-right-medium">
-            <h6 class="uk-text-primary">OUR VALUE</h6>
-            <h2 class="uk-margin-small-top">{{itm.name}}</h2>
-            <p class="subtitle-text">
-
-            </p>
-
+            <h6 class="uk-text-primary">THEY TRUST US</h6>
+            <h2 class="uk-margin-small-top">{{ itm.name }}</h2>
+            <p class="subtitle-text"></p>
           </div>
         </div>
       </li>
-
     </ul>
   </div>
 </section>
 
+<section class="uk-section uk-section-small uk-section-default">
+  <h2 class="uk-text-primary uk-h1 uk-text-center">SUBMIT YOUR REQUEST</h2>
+
+  <div class="uk-container">
+    <form>
+      <fieldset class="uk-fieldset">
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="Name" />
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="First Name" />
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="Description" />
+        </div>
+
+        <div class="js-upload" uk-form-custom>
+          <input type="file" />
+          <button
+            class="uk-button uk-button-default"
+            type="button"
+            tabindex="-1"
+          >
+            Select
+          </button>
+        </div>
+      </fieldset>
+      <div class="uk-margin uk-align-center">
+        <button class="uk-button uk-button-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
