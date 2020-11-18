@@ -24,7 +24,7 @@ export class AccueilComponent implements OnInit {
     this.getAllTestimonails()
   }
   getAllExperts() {
-    this.expertsService.getAllClients().subscribe((data) => {
+    this.expertsService.getAllExperts().subscribe((data) => {
       let result: any = data
 
       this.experts = result.clients

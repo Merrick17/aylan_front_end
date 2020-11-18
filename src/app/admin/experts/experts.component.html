@@ -3,7 +3,7 @@
   data-uk-grid
 >
   <div class=" ">
-    <button class="uk-button uk-button-primary" uk-toggle="target: #add_client">Add An Expert</button>
+    <button class="uk-button uk-button-primary" uk-toggle="target: #add_expert">Add An Expert</button>
   </div>
 </div>
 <table class="uk-table uk-table-middle uk-table-divider">
@@ -14,6 +14,9 @@
         </th>
         <th class="uk-background-primary">
           <span style="color: #fff" class="uk-text-bold">Name</span>
+        </th>
+        <th class="uk-background-primary">
+          <span style="color: #fff" class="uk-text-bold">Email</span>
         </th>
         <th class="uk-background-primary">
           <span style="color: #fff" class="uk-text-bold">Description</span>
@@ -34,14 +37,16 @@
          {{exp.name}}
         </td>
         <td>
+         {{exp.email}}
+        </td>
+        <td>
         {{exp.description}}
         </td>
-
         <td class="uk-width-small">
          <img src="http://localhost:3000/{{exp.image}}" width="200px" height="100px"/>
         </td>
         <td>
-          <button class="uk-button uk-button-primary uk-margin uk-width-1-1" type="button">
+          <button class="uk-button uk-button-primary uk-margin uk-width-1-1" uk-toggle="target: #edit_expert" (click)="readyToEdit(exp._id, exp.name, exp.email, exp.description)" type="button">
             <span uk-icon="file-edit"></span> Edit
           </button>
           <br/>
@@ -53,33 +58,49 @@
 
     </tbody>
   </table>
+  <div id="edit_expert" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Edit Expert</h2>
+        <form>
+          <fieldset class="uk-fieldset">
+              <div class="uk-margin">
+                  <input class="uk-input" type="text" placeholder="Name"  [(ngModel)]="this.expertToEdit.name"   [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="uk-margin">
+                  <input class="uk-input" type="text" placeholder="Description"  [(ngModel)]="this.expertToEdit.description"   [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="uk-margin">
+                  <input class="uk-input" type="text" placeholder="Email"   [(ngModel)]="this.expertToEdit.email"   [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="uk-margin" uk-margin>
+                <div uk-form-custom="target: true">
+                    <input type="file"  (change)="onChange($event)">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                </div>
 
-  <div id="add_client" uk-modal>
+            </div>
+          </fieldset>
+        </form>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default   uk-modal-close uk-modal-close" type="button"  (click)="clear()">Cancel</button>
+            <button class="uk-button uk-button-primary  uk-modal-close" type="button" (click)="updateExpert()" >Save</button>
+        </p>
+    </div>
+  </div>
+  <div id="add_expert" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">Add An Expert</h2>
         <form>
           <fieldset class="uk-fieldset">
-
-
-
               <div class="uk-margin">
                   <input class="uk-input" type="text" placeholder="Name"  [(ngModel)]="name"   [ngModelOptions]="{standalone: true}">
               </div>
-
-
-
-
               <div class="uk-margin">
                   <input class="uk-input" type="text" placeholder="Description"  [(ngModel)]="description"   [ngModelOptions]="{standalone: true}">
               </div>
-
-
-
               <div class="uk-margin">
                   <input class="uk-input" type="text" placeholder="Email"   [(ngModel)]="email"   [ngModelOptions]="{standalone: true}">
               </div>
-
-
               <div class="uk-margin" uk-margin>
                 <div uk-form-custom="target: true">
                     <input type="file"  (change)="onChange($event)">

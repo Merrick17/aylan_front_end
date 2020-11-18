@@ -10,11 +10,10 @@ export class ExpertService {
   BASE_URL=environment.BASE_URL;
   constructor(private http: HttpClient) { }
   
-  getAllClients() {
+  getAllExperts() {
     return this.http.get(this.BASE_URL + '/expert/')
   }
-  createClient(data) {
-    console.log(data)
+  createExpert(data) {
   const token = localStorage.getItem('token')
     return this.http.post(this.BASE_URL + '/expert/create', data, {headers:{
     'access_token':token
@@ -22,17 +21,18 @@ export class ExpertService {
   }}
 )
   }
-  deleteClient(id) {
+  deleteExpert(id) {
       const token = localStorage.getItem('token')
     return this.http.delete(this.BASE_URL + `/expert/${id}/delete`, {headers:{
     'access_token':token
   }})
   }
-  updateClient(id, data) {
+  updateExpert(id, data) {
+    
       const token = localStorage.getItem('token')
-    return this.http.put(this.BASE_URL + `/expert/${id}/update`, {
+    return this.http.put(this.BASE_URL + `/expert/${id}/update`, 
       data
-    }, {headers:{
+    , {headers:{
     'access_token':token
   }})
   }

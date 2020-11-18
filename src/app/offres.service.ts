@@ -20,8 +20,6 @@ BASE_URL=environment.BASE_URL;
     return this.http.delete(this.BASE_URL + `/offre/${id}/delete`)
   }
   updateOffre(id, data) {
-    return this.http.put(this.BASE_URL + `/offre/${id}/update`, {
-      data
-    })
+    return this.http.put(this.BASE_URL + `/offre/${id}/update`,data)
   }
 }

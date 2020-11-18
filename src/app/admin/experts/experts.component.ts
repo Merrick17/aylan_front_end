@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ToastrService } from 'ngx-toastr'
 import { ExpertService } from '../../expert.service'
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-experts',
   templateUrl: './experts.component.html',
@@ -12,6 +13,13 @@ export class ExpertsComponent implements OnInit {
   email = ''
   file: File = null
   experts = []
+
+  expertToEdit = {
+    id: "",
+    name:"",
+    description: "",
+    email: ""
+  }
   constructor(
     private expertService: ExpertService,
     private toastr: ToastrService,
@@ -25,29 +33,63 @@ export class ExpertsComponent implements OnInit {
     this.file = event.target.files[0]
   }
   addExpert() {
-    let formData = new FormData()
+    var formData = new FormData()
     formData.append('name', this.name)
     formData.append('email', this.email)
     formData.append('desc', this.description)
     formData.append('image', this.file)
-    this.expertService.createClient(formData).subscribe((data) => {
+    this.expertService.createExpert(formData).subscribe((data) => {
       let result: any = data
       this.toastr.success(result.msg, 'Success')
       this.getAllExperts()
-      console.log(data)
+      this.clear()
+    })
+  }
+
+  readyToEdit(id, name, email, description) {
+    this.expertToEdit.id = id;
+    this.expertToEdit.name = name;
+    this.expertToEdit.email = email;
+    this.expertToEdit.description = description
+  }
+
+  updateExpert() {
+    this.readyToEdit(this.expertToEdit.id, this.expertToEdit.name, this.expertToEdit.email, this.expertToEdit.description)
+    let formData = new FormData()
+    formData.append('name', this.expertToEdit.name)
+    formData.append('email', this.expertToEdit.email)
+    formData.append('desc', this.expertToEdit.description)
+    if (this.file) {
+      formData.append('image', this.file)
+    }
+    this.expertService.updateExpert(this.expertToEdit.id, formData).subscribe(data => {
+      const result: any = data
+      this.getAllExperts()
       this.clear()
     })
   }
   getAllExperts() {
-    this.expertService.getAllClients().subscribe((data) => {
+    this.expertService.getAllExperts().subscribe((data) => {
       let result: any = data
-      this.experts = result.clients
-      console.log(result)
+      this.experts = result.experts
     })
   }
   deleteExpert(id) {
-    this.expertService.deleteClient(id).subscribe((data) => {
-      this.toastr.success('Expert Deleted', 'Success')
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.expertService.deleteExpert(id).subscribe((data) => {
+          this.toastr.success('Expert Deleted', 'Success')
+          this.getAllExperts()
+        })
+      }
     })
   }
   clear() {

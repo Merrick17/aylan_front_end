@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { ToastrService } from 'ngx-toastr'
 import { ClientService } from '../../../app/client.service'
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
@@ -11,7 +11,10 @@ export class ClientsComponent implements OnInit {
   clientName = ''
   file: File = null
   clients = []
-
+  userToUpdate = {
+    id: "",
+    name: ""
+  }
   constructor(
     private clientService: ClientService,
     private toaster: ToastrService,
@@ -30,8 +33,7 @@ export class ClientsComponent implements OnInit {
   SubmitClient() {
     var formData = new FormData()
     formData.append('name', this.clientName)
-    formData.append('image', this.file)
-    console.log('Naaaaame', formData.get('name'))
+    formData.append('image', this.file, this.file.name)
     this.clientService.createClient(formData).subscribe(
       (data) => {
         let result: any = data
@@ -45,18 +47,48 @@ export class ClientsComponent implements OnInit {
       },
     )
   }
+
+  readyToEdit(id, name) {
+    this.userToUpdate.id = id;
+    this.userToUpdate.name = name;
+  }
+  updateUser() {
+
+    this.readyToEdit(this.userToUpdate.id, this.userToUpdate.name)
+    var formData = new FormData()
+    formData.append('name', this.userToUpdate.name)
+    if (this.file) {
+      formData.append('image', this.file)
+    }
+    this.clientService.updateClient(this.userToUpdate.id, formData).subscribe(data => {
+      const result: any = data
+        this.getAllClients()
+        this.clear()
+    })
+  }
   getAllClients() {
     this.clientService.getAllClients().subscribe((data) => {
       let result: any = data
       this.clients = result.clients
-      //console.log(result);
     })
   }
   deleteClient(id) {
-    this.clientService.deleteClient(id).subscribe((data) => {
-      let result: any = data
-      this.toaster.success('Client Deleted', 'Success')
-      this.getAllClients()
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.clientService.deleteClient(id).subscribe((data) => {
+          let result: any = data
+          this.toaster.success('Client Deleted', 'Success')
+          this.getAllClients()
+        })
+      }
     })
   }
   clear() {

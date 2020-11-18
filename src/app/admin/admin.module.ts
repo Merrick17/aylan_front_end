@@ -14,7 +14,9 @@ import { ResumeComponent } from './resume/resume.component'
 import { NewsComponent } from './news/news.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { TestomanialComponent } from './testomanial/testomanial.component'
-import { PdfViewerModule } from 'ng2-pdf-viewer'
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ServiceComponent } from './service/service.component'
+import { QuillModule } from 'ngx-quill'
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +33,10 @@ const routes: Routes = [
       {
         path: 'clients',
         component: ClientsComponent,
+      },
+      {
+        path: 'services',
+        component: ServiceComponent,
       },
       {
         path: 'experts',
@@ -68,13 +74,14 @@ const routes: Routes = [
     NewsComponent,
     ClientsComponent,
     TestomanialComponent,
+    ServiceComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-
+    QuillModule,
   ],
   providers: [],
 })

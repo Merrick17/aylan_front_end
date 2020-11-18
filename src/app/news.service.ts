@@ -4,32 +4,33 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class NewsService {
 BASE_URL=environment.BASE_URL;
   constructor(private http: HttpClient) { }
-  
-  getAllServices() {
-    return this.http.get(this.BASE_URL + '/service/')
-  }
-  createService(data) {
 
-  const token = localStorage.getItem('token')
-    return this.http.post(this.BASE_URL + '/service/create', 
-      data
-    , {headers:{
+      getAllNews() {
+    return this.http.get(this.BASE_URL + '/news/')
+      }
+  createNews(data) {
+    console.log(data)
+        const token = localStorage.getItem('token')
+    return this.http.post(this.BASE_URL + '/news/create', 
+      data,{headers:{
     'access_token':token
+    
   }}
-)
+    )
   }
-  deleteService(id) {
+  deleteNews(id) {
       const token = localStorage.getItem('token')
-    return this.http.delete(this.BASE_URL + `/service/${id}/delete`, {headers:{
+    return this.http.delete(this.BASE_URL + `/news/${id}/delete`,{headers:{
     'access_token':token
+    
   }})
   }
-  updateService(id, data) {
+    updateNews(id, data) {
       const token = localStorage.getItem('token')
-    return this.http.put(this.BASE_URL + `/service/${id}/update`, 
+    return this.http.put(this.BASE_URL + `/news/${id}/update`, 
       data
     , {headers:{
     'access_token':token

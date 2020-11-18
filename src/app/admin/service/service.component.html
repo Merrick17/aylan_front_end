@@ -1,0 +1,132 @@
+<div class="uk-grid uk-align-right" data-uk-grid>
+  <div class=" ">
+    <button class="uk-button uk-button-primary" uk-toggle="target: #add_service">
+      Add An Service
+    </button>
+  </div>
+</div>
+<table class="uk-table uk-table-middle uk-table-divider">
+  <thead>
+    <tr class="uk-background-primary">
+      <th class="uk-width-small" class="uk-background-primary">
+        <span style="color: #fff;" class="uk-text-bold">Title</span>
+      </th>
+      <th class="uk-background-primary">
+        <span style="color: #fff;" class="uk-text-bold">Description</span>
+      </th>
+    <th class="uk-background-primary">
+        <span style="color: #fff;" class="uk-text-bold">Actions</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ser of services; let i = index">
+      <td>
+        {{ ser.title }}
+      </td>
+      <td>
+        {{ ser.description }}
+      </td>
+      <td>
+        <button
+        uk-toggle="target: #edit_service"
+          class="uk-button uk-button-primary uk-margin uk-width-1-1"
+          type="button"
+          (click)="readyToEdit(ser._id, ser.title, ser.description)"
+        >
+          <span uk-icon="file-edit"></span>
+          Edit
+        </button>
+        <br />
+        <button class="uk-button uk-button-danger uk-width-1-1" (click)="deleteService(ser._id)" type="button">
+          <span uk-icon="trash"></span>
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div id="edit_service" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <h2 class="uk-modal-title">Edit An Service</h2>
+    <form>
+      <fieldset class="uk-fieldset">
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Title"
+            [(ngModel)]="this.serviceToEdit.title"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Description"
+            [(ngModel)]="this.serviceToEdit.description"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+      </fieldset>
+    </form>
+    <p class="uk-text-right">
+      <button
+        class="uk-button uk-button-default uk-modal-close uk-modal-close"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="uk-button uk-button-primary uk-modal-close"
+        type="button"
+        (click)="editService()"
+      >
+        Edit
+      </button>
+    </p>
+  </div>
+</div>
+<div id="add_service" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <h2 class="uk-modal-title">Add A New Service</h2>
+    <form>
+      <fieldset class="uk-fieldset">
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Title"
+            [(ngModel)]="title"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Description"
+            [(ngModel)]="description"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+      </fieldset>
+    </form>
+    <p class="uk-text-right">
+      <button
+        class="uk-button uk-button-default uk-modal-close uk-modal-close"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="uk-button uk-button-primary uk-modal-close"
+        type="button"
+        (click)="submitService()"
+      >
+        Save
+      </button>
+    </p>
+  </div>
+</div>

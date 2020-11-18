@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { OffresService } from '../../offres.service';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
@@ -12,6 +13,14 @@ export class OffersComponent implements OnInit {
   rec = '';
   salary = '';
   ref = '';
+  offerToEdit = {
+    id: "",
+    title: '',
+  desc: '',
+  rec: '',
+  salary: '',
+  ref: '',
+  }
   offers=[]; 
   constructor(
     private OfferService: OffresService,
@@ -32,7 +41,6 @@ export class OffersComponent implements OnInit {
     }).subscribe((data) => {
       let result: any = data;
       this.toaster.success(result.msg,'Success')
-      console.log(result);
     });
   }
   getAllOffers()
@@ -40,7 +48,45 @@ export class OffersComponent implements OnInit {
     this.OfferService.getAllOffres().subscribe(data=>{
       let result:any=data ; 
       this.offers=result.offers ; 
-      console.log(result)
+    })
+  }
+  readyToEdit(id, title, desc, ref, rec, salary) {
+    this.offerToEdit.id = id
+  this.offerToEdit.title = title;
+  this.offerToEdit.desc = desc;
+  this.offerToEdit.ref = ref;
+  this.offerToEdit.rec = rec;
+  this.offerToEdit.salary = salary;
+}
+
+  deleteOffer(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.OfferService.deleteOffre(id).subscribe(data => {
+          const result: any = data
+          this.getAllOffers()
+        })
+      }
+    })
+  }
+  editOffer() {
+    this.readyToEdit(this.offerToEdit.id,
+  this.offerToEdit.title,
+  this.offerToEdit.desc,
+  this.offerToEdit.ref,
+  this.offerToEdit.rec,
+  this.offerToEdit.salary)
+    this.OfferService.updateOffre(this.offerToEdit.id, this.offerToEdit).subscribe(data => {
+      const result: any = data
+      this.getAllOffers()
     })
   }
 }

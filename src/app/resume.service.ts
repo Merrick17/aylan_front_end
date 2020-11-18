@@ -9,18 +9,14 @@ export class ResumeService {
   BASE_URL = environment.BASE_URL
   constructor(private http: HttpClient) {}
 
-  getAllresumes() {
+  getAllResumes() {
     return this.http.get(this.BASE_URL + '/resume/')
   }
-  createresume(data) {
-    const token = localStorage.getItem('token')
+  createResume(data) {
     return this.http.post(
-      this.BASE_URL + '/resume/create',
-
-      data,
-    )
+      this.BASE_URL + '/resume/create',data)
   }
-  deleteresume(id) {
+  deleteResume(id) {
     const token = localStorage.getItem('token')
     return this.http.delete(this.BASE_URL + `/resume/${id}/delete`, {
       headers: {
@@ -28,13 +24,11 @@ export class ResumeService {
       },
     })
   }
-  updateresume(id, data) {
+  updateResume(id, data) {
     const token = localStorage.getItem('token')
     return this.http.put(
       this.BASE_URL + `/resume/${id}/update`,
-
       data,
-
       {
         headers: {
           access_token: token,

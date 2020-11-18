@@ -16,7 +16,6 @@ BASE_URL=environment.BASE_URL;
   const token = localStorage.getItem('token')
     return this.http.post(this.BASE_URL + '/client/create', data, {headers:{
     'access_token':token
-    
   }}
 )
   }
@@ -28,9 +27,9 @@ BASE_URL=environment.BASE_URL;
   }
   updateClient(id, data) {
       const token = localStorage.getItem('token')
-    return this.http.put(this.BASE_URL + `/client/${id}/update`, {
+    return this.http.put(this.BASE_URL + `/client/${id}/update`, 
       data
-    }, {headers:{
+    , {headers:{
     'access_token':token
   }})
   }

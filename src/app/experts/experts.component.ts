@@ -47,10 +47,12 @@ export class ExpertsComponent implements OnInit {
     formData.append('email', this.email)
     formData.append('offer', this.selectedOffer)
     formData.append('phone', this.phone)
-
-    this.resumeService.createresume(formData).subscribe((data) => {
+    if (this.file) {
+    formData.append('resume', this.file)
+    }
+    this.resumeService.createResume(formData).subscribe((data) => {
       console.log(data)
-      this.toaster.success('You Resume is uploaded Succeffully', 'Success')
+      this.toaster.success('You Resume is uploaded Successfully', 'Success')
       this.name = ''
       this.file = null
       this.firstName = ''

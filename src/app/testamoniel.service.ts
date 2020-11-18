@@ -29,9 +29,9 @@ BASE_URL=environment.BASE_URL;
   }
   updateTestomanial(id, data) {
       const token = localStorage.getItem('token')
-    return this.http.put(this.BASE_URL + `/testomanial/${id}/update`, {
+    return this.http.put(this.BASE_URL + `/testomanial/${id}/update`, 
       data
-    }, {headers:{
+    , {headers:{
     'access_token':token
   }})
   }

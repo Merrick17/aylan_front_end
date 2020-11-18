@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ResumeService } from 'src/app/resume.service'
+import { ToastrService } from 'ngx-toastr'
+import Swal from 'sweetalert2'
 declare var require: any
 const FileSaver = require('file-saver')
 @Component({
@@ -12,14 +14,14 @@ export class ResumeComponent implements OnInit {
   BASE_URL = 'http://localhost:3000/'
   secletedPf = ''
 
-  constructor(private resumeService: ResumeService) {}
+  constructor(private resumeService: ResumeService, private toaster: ToastrService) { }
 
   ngOnInit(): void {
     this.getAllResume()
   }
 
   getAllResume() {
-    this.resumeService.getAllresumes().subscribe((data) => {
+    this.resumeService.getAllResumes().subscribe((data) => {
       console.log(data)
       let resulet: any = data
       this.resume = resulet.Resumes
@@ -36,5 +38,24 @@ export class ResumeComponent implements OnInit {
 
   openDoc(pdfUrl: string, startPage: number) {
     window.open(pdfUrl + '#page=' + startPage, '_blank', '', true)
+  }
+  deleteResume(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.resumeService.deleteResume(id).subscribe((data) => {
+          let result: any = data
+          this.toaster.success('Resume Deleted', 'Success')
+          this.getAllResume()
+        })
+      }
+    })
   }
 }

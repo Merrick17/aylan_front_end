@@ -2,19 +2,22 @@
   <thead>
     <tr class="uk-background-primary">
       <th class="uk-width-small" class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">Ref</span>
-      </th>
-      <th class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">Offer Title</span>
-      </th>
-      <th class="uk-background-primary">
-        <span style="color: #fff;" class="uk-text-bold">Name</span>
+        <span style="color: #fff;" class="uk-text-bold">Last Name</span>
       </th>
       <th class="uk-background-primary">
         <span style="color: #fff;" class="uk-text-bold">First Name</span>
       </th>
       <th class="uk-background-primary">
+        <span style="color: #fff;" class="uk-text-bold">Phone</span>
+      </th>
+      <th class="uk-background-primary">
         <span style="color: #fff;" class="uk-text-bold">Email</span>
+      </th>
+      <th class="uk-background-primary">
+        <span style="color: #fff;" class="uk-text-bold">Offer</span>
+      </th>
+            <th class="uk-background-primary">
+        <span style="color: #fff;" class="uk-text-bold">Resume</span>
       </th>
       <th class="uk-background-primary">
         <span style="color: #fff;" class="uk-text-bold">Actions</span>
@@ -23,18 +26,21 @@
   </thead>
   <tbody>
     <tr *ngFor="let res of resume; let i = index">
-      <td>{{ res.offer.ref }}</td>
-      <td>
-        {{ res.offer.title }}
-      </td>
-      <td>
-        {{ res.name }}
-      </td>
+      <td>{{ res.lastName }}</td>
       <td>
         {{ res.firstName }}
       </td>
+      <td>
+        {{ res.phone }}
+      </td>
       <td class="uk-width-small">
         {{ res.email }}
+      </td>
+      <td >
+        {{ res.offer.title }}
+      </td>
+            <td >
+        {{ res.resume }}
       </td>
       <td>
         <button

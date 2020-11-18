@@ -45,14 +45,16 @@
       </td>
       <td>
         <button
+        uk-toggle="target: #edit_client"
           class="uk-button uk-button-primary uk-margin uk-width-1-1"
           type="button"
+          (click)="readyToEdit(off._id, off.title, off.description, off.ref, off.requirement, off.minSalary)"
         >
           <span uk-icon="file-edit"></span>
           Edit
         </button>
         <br />
-        <button class="uk-button uk-button-danger uk-width-1-1" type="button">
+        <button class="uk-button uk-button-danger uk-width-1-1" (click)="deleteOffer(off._id)" type="button">
           <span uk-icon="trash"></span>
           Delete
         </button>
@@ -60,6 +62,79 @@
     </tr>
   </tbody>
 </table>
+<div id="edit_client" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <h2 class="uk-modal-title">Edit An Offer</h2>
+    <form>
+      <fieldset class="uk-fieldset">
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Reference"
+            [(ngModel)]="this.offerToEdit.ref"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Title"
+            [(ngModel)]="this.offerToEdit.title"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Description"
+            [(ngModel)]="this.offerToEdit.desc"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Requirements"
+            [(ngModel)]="this.offerToEdit.rec"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+        <div class="uk-margin">
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="Minimum Salary"
+            [(ngModel)]="this.offerToEdit.salary"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+      </fieldset>
+    </form>
+    <p class="uk-text-right">
+      <button
+        class="uk-button uk-button-default uk-modal-close uk-modal-close"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="uk-button uk-button-primary uk-modal-close"
+        type="button"
+        (click)="editOffer()"
+      >
+        Edit
+      </button>
+    </p>
+  </div>
+</div>
 <div id="add_client" uk-modal>
   <div class="uk-modal-dialog uk-modal-body">
     <h2 class="uk-modal-title">Add A New Offer</h2>
@@ -109,7 +184,7 @@
           <input
             class="uk-input"
             type="text"
-            placeholder="Minimeum Salary"
+            placeholder="Minimum Salary"
             [(ngModel)]="salary"
             [ngModelOptions]="{ standalone: true }"
           />

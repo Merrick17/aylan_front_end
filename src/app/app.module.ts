@@ -16,6 +16,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
+import { QuillModule } from 'ngx-quill'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ToastrModule } from 'ngx-toastr'
 import { ContactComponent } from './contact/contact.component'
 import { NewsComponent } from './news/news.component'
@@ -42,8 +44,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer'
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
+    SweetAlert2Module.forRoot(),
     ToastrModule.forRoot(),
+    QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

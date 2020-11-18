@@ -1,1 +1,30 @@
-<p>contact works!</p>
+<div>
+    <form>
+    <fieldset class="uk-fieldset">
+
+        <legend class="uk-legend">Contact Us</legend>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="First Name" [(ngModel)]="this.messageToSubmit.firstName" [ngModelOptions]="{ standalone: true }" required>
+        </div>
+                <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Last Name" [(ngModel)]="this.messageToSubmit.lastName" [ngModelOptions]="{ standalone: true }"required>
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="email" placeholder="Email" [(ngModel)]="this.messageToSubmit.email" [ngModelOptions]="{ standalone: true }"required>
+        </div>
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="Textarea" [(ngModel)]="this.messageToSubmit.message" [ngModelOptions]="{ standalone: true }"required></textarea>
+        </div>
+    </fieldset>
+</form>
+    <p class="uk-text-right">
+      <button
+        class="uk-button uk-button-primary uk-modal-close"
+        type="button"
+        (click)="submitMessage()"
+      >
+        Submit
+      </button>
+    </p>
+</div>
