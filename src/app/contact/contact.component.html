@@ -1,30 +1,93 @@
-<div>
-    <form>
-    <fieldset class="uk-fieldset">
-
-        <legend class="uk-legend">Contact Us</legend>
-
-        <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="First Name" [(ngModel)]="this.messageToSubmit.firstName" [ngModelOptions]="{ standalone: true }" required>
-        </div>
-                <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Last Name" [(ngModel)]="this.messageToSubmit.lastName" [ngModelOptions]="{ standalone: true }"required>
-        </div>
-        <div class="uk-margin">
-            <input class="uk-input" type="email" placeholder="Email" [(ngModel)]="this.messageToSubmit.email" [ngModelOptions]="{ standalone: true }"required>
-        </div>
-        <div class="uk-margin">
-            <textarea class="uk-textarea" rows="5" placeholder="Textarea" [(ngModel)]="this.messageToSubmit.message" [ngModelOptions]="{ standalone: true }"required></textarea>
-        </div>
-    </fieldset>
-</form>
-    <p class="uk-text-right">
-      <button
-        class="uk-button uk-button-primary uk-modal-close"
-        type="button"
-        (click)="submitMessage()"
+<div uk-height-viewport="min-height: 100vh">
+  <div>
+    <div
+      class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height"
+    >
+      <div
+        class="uk-container uk-flex-auto top-container uk-position-relative uk-margin-medium-top"
+        data-uk-parallax="y: 0,50; easing:0; opacity:0.3"
       >
-        Submit
-      </button>
-    </p>
+        <div
+          data-uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150"
+        >
+          <h1 class="uk-margin-remove-top uk-text-primary uk-text-bolder">
+            Always Keep In Touch
+          </h1>
+          <h2 class="uk-margin-remove-top uk-text-primary uk-text-bolder">
+            <!-- JOIN US NOW -->
+          </h2>
+        </div>
+      </div>
+
+      <img
+        class="uk-blend-darken"
+        src="../assets/img/contact.jpg"
+        data-sizes="100vw"
+        alt=""
+        data-uk-cover
+        data-uk-img
+        data-uk-parallax="opacity: 0.8,0.1; easing:0"
+      />
+      <!-- /TOP IMAGE -->
+    </div>
+  </div>
+  <div class="uk-section uk-section-default">
+    <div class="uk-container">
+      <form>
+        <fieldset class="uk-fieldset">
+          <legend class="uk-legend">Contact Us</legend>
+
+          <div class="uk-margin">
+            <input
+              class="uk-input"
+              type="text"
+              placeholder="First Name"
+              [(ngModel)]="this.messageToSubmit.firstName"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="uk-margin">
+            <input
+              class="uk-input"
+              type="text"
+              placeholder="Last Name"
+              [(ngModel)]="this.messageToSubmit.lastName"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="uk-margin">
+            <input
+              class="uk-input"
+              type="email"
+              placeholder="Email"
+              [(ngModel)]="this.messageToSubmit.email"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="uk-margin">
+            <textarea
+              class="uk-textarea"
+              rows="5"
+              placeholder="Textarea"
+              [(ngModel)]="this.messageToSubmit.message"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            ></textarea>
+          </div>
+        </fieldset>
+      </form>
+      <p class="uk-text-right">
+        <button
+          class="uk-button uk-button-primary uk-modal-close"
+          type="button"
+          (click)="submitMessage()"
+        >
+          Submit
+        </button>
+      </p>
+    </div>
+  </div>
 </div>

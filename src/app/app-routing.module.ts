@@ -7,7 +7,7 @@ import { ContactComponent } from './contact/contact.component'
 import { ExpertsComponent } from './experts/experts.component'
 import { NewsComponent } from './news/news.component'
 import { ServicesComponent } from './services/services.component'
-
+import { AuthGuard } from './auth.guard'
 const routes: Routes = [
   {
     path: '',
@@ -42,6 +42,7 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
+    canActivate: [AuthGuard],
   },
 ]
 

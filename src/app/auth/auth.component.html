@@ -19,9 +19,13 @@
               type="text"
               formControlName="email"
             />
-           
           </div>
-          <span class="uk-text-center uk-text-justify uk-text-danger" *ngIf=" submitted && authForm.controls.email.errors  ">Invalid Email</span>
+          <span
+            class="uk-text-center uk-text-justify uk-text-danger"
+            *ngIf="submitted && authForm.controls.email.errors"
+          >
+            Invalid Email
+          </span>
         </div>
         <div class="uk-margin-small">
           <div class="uk-inline uk-width-1-1">
@@ -36,9 +40,13 @@
               type="password"
               formControlName="password"
             />
-            
           </div>
-          <span class="uk-text-center uk-text-justify uk-text-danger" *ngIf="submitted && authForm.controls.password.errors">Invalid Password</span>
+          <span
+            class="uk-text-center uk-text-justify uk-text-danger"
+            *ngIf="submitted && authForm.controls.password.errors"
+          >
+            Invalid Password
+          </span>
         </div>
         <div class="uk-margin-small">
           <!-- <label
@@ -46,7 +54,7 @@
             in</label
           > -->
         </div>
-       
+
         <div class="uk-margin-bottom">
           <button
             type="submit"
@@ -60,7 +68,7 @@
     <!-- /login -->
 
     <!-- recover password -->
-    <form class="toggle-class" action="login-dark.html" hidden>
+    <form class="toggle-class" hidden>
       <div class="uk-margin-small">
         <div class="uk-inline uk-width-1-1">
           <span
@@ -92,14 +100,21 @@
         <a
           class="uk-link-reset uk-text-small toggle-class"
           data-uk-toggle="target: .toggle-class ;animation: uk-animation-fade"
-          >Forgot your password?</a
         >
+          Forgot your password?
+        </a>
+        <br />
+        <a class="uk-link-reset uk-text-small toggle-class" routerLink="/">
+          Back To Home
+        </a>
         <a
           class="uk-link-reset uk-text-small toggle-class"
           data-uk-toggle="target: .toggle-class ;animation: uk-animation-fade"
           hidden
-          ><span data-uk-icon="arrow-left"></span> Back to Login</a
         >
+          <span data-uk-icon="arrow-left"></span>
+          Back to Login
+        </a>
       </div>
     </div>
     <!-- action buttons -->

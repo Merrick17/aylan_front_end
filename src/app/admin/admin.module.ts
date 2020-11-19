@@ -17,6 +17,7 @@ import { TestomanialComponent } from './testomanial/testomanial.component'
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ServiceComponent } from './service/service.component'
 import { QuillModule } from 'ngx-quill'
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
 const routes: Routes = [
   {
     path: '',
@@ -82,6 +83,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     QuillModule,
+
   ],
   providers: [],
 })

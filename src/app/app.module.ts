@@ -17,11 +17,12 @@ import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { QuillModule } from 'ngx-quill'
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 import { ToastrModule } from 'ngx-toastr'
 import { ContactComponent } from './contact/contact.component'
 import { NewsComponent } from './news/news.component'
 import { PdfViewerModule } from 'ng2-pdf-viewer'
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,14 @@ import { PdfViewerModule } from 'ng2-pdf-viewer'
     SweetAlert2Module.forRoot(),
     ToastrModule.forRoot(),
     QuillModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        // ...
+        tokenGetter: () => {
+          return localStorage.getItem('token')
+        },
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
