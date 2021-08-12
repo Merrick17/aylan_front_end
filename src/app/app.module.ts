@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -23,6 +23,7 @@ import { ContactComponent } from './contact/contact.component'
 import { NewsComponent } from './news/news.component'
 import { PdfViewerModule } from 'ng2-pdf-viewer'
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
+import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     SweetAlert2Module.forRoot(),
     ToastrModule.forRoot(),
     QuillModule.forRoot(),
@@ -59,5 +61,6 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

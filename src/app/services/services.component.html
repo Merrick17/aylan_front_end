@@ -1,44 +1,80 @@
-<div uk-height-viewport="min-height: 100vh">
+<div>
   <div>
-    <div
-      class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height"
-    >
-      <div
-        class="uk-container uk-flex-auto top-container uk-position-relative uk-margin-medium-top"
-        data-uk-parallax="y: 0,50; easing:0; opacity:0.3"
-      >
-        <div
-          data-uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150"
-        >
-          <h1 class="uk-margin-remove-top uk-text-primary uk-text-bolder">
+    <div class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height"
+      style="background-color: #040424 !important;">
+      <div class="uk-container uk-flex-auto top-container uk-position-relative uk-margin-medium-top"
+        data-uk-parallax="y: 0,50; easing:0; opacity:0.3">
+        <div data-uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150">
+          <h1 class="uk-margin-remove-top  uk-text-bolder">
             LET US HELP YOU
           </h1>
-          <h2 class="uk-margin-remove-top uk-text-primary uk-text-bolder">
+          <h2 class="uk-margin-remove-top  uk-text-bolder">
             TRUSTED BY HOUNDREDS
           </h2>
         </div>
       </div>
+      <img src="../../assets/img/trust.jpg" class="hero-img" />
 
-      <img
-        class="uk-blend-darken"
-        src="../assets/img/trust.jpeg"
-        data-sizes="100vw"
-        alt=""
-        data-uk-cover
-        data-uk-img
-        data-uk-parallax="opacity: 0.8,0.1; easing:0"
-      />
       <!-- /TOP IMAGE -->
     </div>
   </div>
 </div>
-<section id="content" class="uk-section uk-section-default">
+<section class="uk-cover-container " id="testamonial"
+  style="flex-direction: column; display: flex; justify-content: center; align-items: center;min-height: 50vh; position: relative;">
+
+  <div class="uk-container">
+
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+      style="width: 100% !important; height:100% !important;"
+      uk-slider="clsActivated: uk-transition-active; center: true;autoplay: true ;finite: true">
+
+      <ul class="uk-slider-items uk-grid">
+        <li class="testamonial">
+          <div class="uk-panel img-card">
+            <h5>OUR VALUE</h5>
+            <h3>SERVING TO GLOW</h3>
+          </div>
+        </li>
+        <li class=" testamonial ">
+          <div class="uk-panel img-card">
+            <h5>OUR MISSION</h5>
+            <h3>TRUST ON THE HOPE AND THE WILL TO BECOME UNIVERSAL AND GREATER</h3>
+
+          </div>
+        </li>
+        <li class=" testamonial ">
+          <div class="uk-panel img-card">
+            <h5>OUR VISION</h5>
+            <h3>To be an essential reference in the service and the council to allow the companies and the individuals
+              to optimize their performances. </h3>
+
+          </div>
+        </li>
+        <li class=" testamonial ">
+          <div class="uk-panel img-card">
+            <h5>OUR METHODS</h5>
+            <h3>Take decisions with real time data based on users interaction.</h3>
+
+          </div>
+        </li>
+
+      </ul>
+
+      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+        uk-slider-item="previous"></a>
+      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+        uk-slider-item="next"></a>
+
+    </div>
+
+  </div>
+
+</section>
+<section id="content" class="uk-section uk-section-default" style="background-color: #040424 !important;">
   <div class="uk-container">
     <div class="uk-section uk-section-small uk-padding-remove-top">
-      <ul
-        class="uk-subnav uk-subnav-pill uk-flex uk-flex-center"
-        data-uk-switcher="connect: .uk-switcher; animation: uk-animation-fade"
-      >
+      <ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-center"
+        data-uk-switcher="connect: .uk-switcher; animation: uk-animation-fade">
         <li *ngFor="let itm of items">
           <a class="uk-border-pill" href="#">{{ itm.name }}</a>
         </li>
@@ -47,17 +83,10 @@
 
     <ul class="uk-switcher uk-margin">
       <li *ngFor="let itm of items">
-        <div
-          class="uk-grid uk-child-width-1-2@l uk-flex-middle"
-          data-uk-grid
-          data-uk-scrollspy="target: > div; cls: uk-animation-slide-left-medium"
-        >
+        <div class="uk-grid uk-child-width-1-2@l uk-flex-middle" data-uk-grid
+          data-uk-scrollspy="target: > div; cls: uk-animation-slide-left-medium">
           <div>
-            <img
-              src="http://localhost:3000/{{ itm.clientLogo }}"
-              alt=""
-              data-uk-img
-            />
+            <img src="https://aylan-consulting.com/api/{{ itm.clientLogo }}" alt="" data-uk-img />
           </div>
           <div data-uk-scrollspy-class="uk-animation-slide-right-medium">
             <h6 class="uk-text-primary">THEY TRUST US</h6>
@@ -88,11 +117,7 @@
 
         <div class="js-upload" uk-form-custom>
           <input type="file" />
-          <button
-            class="uk-button uk-button-default"
-            type="button"
-            tabindex="-1"
-          >
+          <button class="uk-button uk-button-default" type="button" tabindex="-1">
             Select
           </button>
         </div>
