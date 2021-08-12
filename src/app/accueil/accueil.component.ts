@@ -21,13 +21,15 @@ export class AccueilComponent implements OnInit {
   ngOnInit(): void {
     this.getAllExperts()
     //this.getAllClients()
-    this.getAllTestimonails()
+    this.getAllTestimonails(); 
+    console.log("Experts",this.experts) ; 
   }
   getAllExperts() {
     this.expertsService.getAllExperts().subscribe((data) => {
-      let result: any = data
+      let result: any = data; 
+      console.log("EXPERTS",result) ; 
 
-      this.experts = result.clients
+      this.experts = result.experts
     })
   }
   getAllClients() {

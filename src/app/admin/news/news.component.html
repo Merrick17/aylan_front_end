@@ -24,7 +24,7 @@
 <tr *ngFor="let new of news;let i = index">
    <td>{{new.title}}</td>
       <td>
-      <img src="http://localhost:3000/{{new.image}}" width="300px" height="150"/>
+      <img src="https://aylan-consulting.com/api/{{new.image}}" width="300px" height="150"/>
       </td>
       <td>
         <button
@@ -100,7 +100,7 @@
 </div>
 <div id="display_News" uk-modal>
   <div class="uk-modal-dialog uk-modal-body">
-    <img src="http://localhost:3000/{{this.newsToUpdate.image}}" height="150"/>
+    <img src="https://aylan-consulting.com/api/{{this.newsToUpdate.image}}" height="150"/>
     <h2 class="uk-modal-title">{{this.newsToUpdate.title}}</h2>
     <quill-view-html [content]="this.newsToUpdate.body" format="text" theme="snow"></quill-view-html>
       <p class="uk-text-right">

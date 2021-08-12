@@ -2,3 +2,59 @@
     height: 100vh;
   }
   
+  .hero-img{
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    opacity: 0.7;
+    }
+    // .img-card{
+    //   min-height:100%;
+    //   background:url(http://lorempixel.com/800/600/nature/2) rgba(4, 4, 36, 0.7);
+    //   background-size:cover;
+    //   background-blend-mode: multiply ; 
+    //   height: 350px;
+    //   width: 350px;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    // }
+
+    .uk-card-media-top img {
+      width: 40%;
+      height: 40%;
+    }
+    .img-card{
+      height :380px !important ;
+      width: 470px !important;
+        margin: 5% !important;
+        background: url('../../assets/img/group.png')   ;
+         background-size: 100% 100%;
+        background-repeat: no-repeat;
+        opacity: 0.75;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+       
+    }
+    .img-card h3 {
+      text-transform: uppercase !important;
+      padding: 2em;
+      line-height: 1.2;
+    }
+
+    .uk-subnav-pill > .uk-active > a {
+      background-color: #2aa58a !important; 
+      color: #fff;
+  }
+  .uk-text-primary{
+   color: #2aa58a !important; 
+   font-weight: bold;
+  }
+  .uk-button-primary{
+    background-color:#2aa58a !important ;
+  } 
+  h2{
+    color: #fff !important;
+  }

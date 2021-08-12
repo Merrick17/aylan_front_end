@@ -1,17 +1,12 @@
-<div uk-height-viewport="min-height: 100vh">
+<div>
   <div>
-    <div
-      class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height"
-    >
-      <div
-        class="uk-container uk-flex-auto top-container uk-position-relative uk-margin-medium-top"
-        data-uk-parallax="y: 0,50; easing:0; opacity:0.3"
-      >
-        <div
-          data-uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150"
-        >
+    <div class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height"
+      style="background-color: #040424 !important;">
+      <div class="uk-container uk-flex-auto top-container uk-position-relative uk-margin-medium-top"
+        data-uk-parallax="y: 0,50; easing:0; opacity:0.3">
+        <div data-uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150">
           <h1 class="uk-margin-remove-top uk-text-primary uk-text-bolder">
-            Always Keep In Touch
+            ALWAYS KEEP IN TOUCH
           </h1>
           <h2 class="uk-margin-remove-top uk-text-primary uk-text-bolder">
             <!-- JOIN US NOW -->
@@ -19,15 +14,7 @@
         </div>
       </div>
 
-      <img
-        class="uk-blend-darken"
-        src="../assets/img/contact.jpg"
-        data-sizes="100vw"
-        alt=""
-        data-uk-cover
-        data-uk-img
-        data-uk-parallax="opacity: 0.8,0.1; easing:0"
-      />
+
       <!-- /TOP IMAGE -->
     </div>
   </div>
@@ -35,59 +22,40 @@
     <div class="uk-container">
       <form>
         <fieldset class="uk-fieldset">
-          <legend class="uk-legend">Contact Us</legend>
+          <legend class="uk-legend">CONTACT US</legend>
 
           <div class="uk-margin">
-            <input
-              class="uk-input"
-              type="text"
-              placeholder="First Name"
-              [(ngModel)]="this.messageToSubmit.firstName"
-              [ngModelOptions]="{ standalone: true }"
-              required
-            />
+            <input class="uk-input" type="text" placeholder="First Name" [(ngModel)]="this.messageToSubmit.firstName"
+              [ngModelOptions]="{ standalone: true }" required />
           </div>
           <div class="uk-margin">
-            <input
-              class="uk-input"
-              type="text"
-              placeholder="Last Name"
-              [(ngModel)]="this.messageToSubmit.lastName"
-              [ngModelOptions]="{ standalone: true }"
-              required
-            />
+            <input class="uk-input" type="text" placeholder="Last Name" [(ngModel)]="this.messageToSubmit.lastName"
+              [ngModelOptions]="{ standalone: true }" required />
           </div>
           <div class="uk-margin">
-            <input
-              class="uk-input"
-              type="email"
-              placeholder="Email"
-              [(ngModel)]="this.messageToSubmit.email"
-              [ngModelOptions]="{ standalone: true }"
-              required
-            />
+            <input class="uk-input" type="email" placeholder="Email" [(ngModel)]="this.messageToSubmit.email"
+              [ngModelOptions]="{ standalone: true }" required />
           </div>
           <div class="uk-margin">
-            <textarea
-              class="uk-textarea"
-              rows="5"
-              placeholder="Textarea"
-              [(ngModel)]="this.messageToSubmit.message"
-              [ngModelOptions]="{ standalone: true }"
-              required
-            ></textarea>
+            <textarea class="uk-textarea" rows="5" placeholder="Textarea" [(ngModel)]="this.messageToSubmit.message"
+              [ngModelOptions]="{ standalone: true }" required></textarea>
           </div>
         </fieldset>
       </form>
       <p class="uk-text-right">
-        <button
-          class="uk-button uk-button-primary uk-modal-close"
-          type="button"
-          (click)="submitMessage()"
-        >
+        <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="submitMessage()">
           Submit
         </button>
       </p>
     </div>
   </div>
 </div>
+<section class="uk-section uk-section-default" style="min-height: 50vh !important;margin: 0 !important ;padding: 0 !important; ">
+  <div class="mapouter">
+    <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas"
+        src="https://maps.google.com/maps?q=ariana&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"
+       ></iframe>
+     
+    </div>
+  </div>
+</section>

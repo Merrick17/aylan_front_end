@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../user.service';
 import { AuthService } from '../providers/auth.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -17,7 +18,8 @@ export class AuthComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private toast: ToastrService,
-    private authService: AuthService
+    private authService: AuthService, 
+    private spinner: NgxSpinnerService
   ) {
     this.authForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -36,6 +38,7 @@ export class AuthComponent implements OnInit {
       console.log(this.authForm.controls.password.errors);
       return;
     }
+    this.spinner.show();
     this.userService
       .loginUser(
         this.authForm.controls.email.value,
@@ -43,6 +46,7 @@ export class AuthComponent implements OnInit {
       )
       .subscribe((data) => {
         let result: any = data;
+        this.spinner.hide() ; 
         if (result.token) {
           //this.authService.setAuth(true);
           localStorage.setItem('token', result.token);

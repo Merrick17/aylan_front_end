@@ -11,7 +11,7 @@ const FileSaver = require('file-saver')
 })
 export class ResumeComponent implements OnInit {
   resume = []
-  BASE_URL = 'http://localhost:3000/'
+  BASE_URL = 'https://aylan-consulting.com/api/'
   secletedPf = ''
 
   constructor(private resumeService: ResumeService, private toaster: ToastrService) { }
